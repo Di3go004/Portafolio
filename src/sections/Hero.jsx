@@ -1,5 +1,7 @@
 import React from 'react'
 import { palabras } from '../constants'
+import Boton from '../components/Boton'
+
 
 export default function Hero() {
 
@@ -8,35 +10,53 @@ export default function Hero() {
 
   return (
     <section id='hero' className='raltive overflow-hidden'>
-      <div className='absolute top-0 left-0 z-10'> 
+      <div className='absolute top-0 left-0 z-10'>
         <img src="/images/bg.png" alt="background" />
       </div>
 
       <div className='hero-layout'>
         {/* Left Column */}
-        <header className='flex flex-col justify-center md:w-fulll w-screen md:px-20 px-5'>
-          <div className='felx flex-col gap-7'>
-            <div className='hero-text '>
-              <h1>Organizacion
-                <span className='slide'>
-                  <span className='wrapper'>
-                    {palabras.map((palabra) =>(
-                      <span key={palabra.text} className='flex items-center md:gap-3 gap-1 pb-2 '>
-                        <img src={palabra.imgPath} alt={palabra.text} className='xl:size-12 md:size-10 size-7 md:p-2 p-1 rounded-full bg-white-50'/>
-                        <span>
-                          {palabra.text}
-                        </span>
+        <header className="flex flex-col justify-center md:w-full w-screen md:px-20 px-5">
+          <div className="flex flex-col gap-7">
+            <div className="hero-text">
+              <h1>
+                Moldeando
+                <span className="slide">
+                  <span className="wrapper">
+                    {palabras.map((palabra, index) => (
+                      <span
+                        key={index}
+                        className="flex items-center md:gap-3 gap-1 pb-2"
+                      >
+                        <img
+                          src={palabra.imgPath}
+                          alt="person"
+                          className="xl:size-12 md:size-10 size-7 md:p-2 p-1 rounded-full bg-white-50"
+                        />
+                        <span>{palabra.text}</span>
                       </span>
                     ))}
                   </span>
                 </span>
               </h1>
-              <h1>en proyectos reales</h1>
-              <h1>que dan resultado</h1>
+              <h1>en Proyectos Reales</h1>
+              <h1>que producen Resultados</h1>
             </div>
+
+            <p className="text-white-50 md:text-xl relative z-10 pointer-events-none">
+              Hola, soy Adrian, un desarrollador basado en Croacia con una pasión por
+              el código.
+            </p>
+
+            <Boton
+              text="Ver mi trabajo"
+              className="md:w-80 md:h-16 w-60 h-12"
+              id="counter"
+            />
           </div>
         </header>
         {/* Right Column */}
+        
       </div>
     </section>
   )
